@@ -54,19 +54,19 @@ export class ManageUsersComponent implements OnInit {
 
 
 
-  //  getUsers(){
-  // this.service.getUsersArray().subscribe(tricomms =>{
-  //   this.users = tricomms;
-  //   console.log("New Table Arrays>>", this.users);
-  // })
-  //  }
+   getUsers(){
+  this.service.getUsersArray().subscribe(tricomms =>{
+    this.users = tricomms;
+    console.log("New Table Arrays>>", this.users);
+  })
+   }
 
-   getFireBaseData(){
-     this.http.get<User[]>('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json').subscribe((response:any)=>{
-       this.users = response;
-       console.log("firsBaseTable>>", this.users);
-     })
-  }
+  //  getFireBaseData(){
+  //    this.http.get<User[]>('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json').subscribe((response:any)=>{
+  //      this.users = response;
+  //      console.log("firsBaseTable>>", this.users);
+  //    })
+  // }
 
    editUser(user:User){
      this.service.setUserArray(user);
@@ -90,9 +90,9 @@ export class ManageUsersComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    // this.getUsers();
+    this.getUsers();
     this.viewUsersProfile;
-    this.getFireBaseData();
+    // this.getFireBaseData();
   }
 
 }

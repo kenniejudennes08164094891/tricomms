@@ -45,21 +45,21 @@ export class EditProfileComponent implements OnInit {
   })
 
 
-  // submit(){
-  //   this.user = this.newUserForm.getRawValue();
-  //   this.service.setUsersArray(this.user).subscribe((elem:any)=>{
-  //     console.log("submitted Arrays>>", this.newUserForm.value, elem);
-  //     this.setLocalStorage();
-  //     alert('Account has been updated succesfully');
-  //   })
-  // }
-
   submit(){
     this.user = this.newUserForm.getRawValue();
-    this.http.post('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json', this.user).subscribe((response:any)=>{
-      console.log("reponseFromFireBase>>", this.newUserForm.value);
+    this.service.setUsersArray(this.user).subscribe((elem:any)=>{
+      console.log("submitted Arrays>>", this.newUserForm.value, elem);
+      this.setLocalStorage();
+      alert('Account has been updated succesfully');
     })
   }
+
+  // submit(){
+  //   this.user = this.newUserForm.getRawValue();
+  //   this.http.post('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json', this.user).subscribe((response:any)=>{
+  //     console.log("reponseFromFireBase>>", this.newUserForm.value);
+  //   })
+  // }
 
   setLocalStorage(){
     localStorage.setItem('userId',this.userId.toString());

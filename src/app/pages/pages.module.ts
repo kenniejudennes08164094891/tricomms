@@ -37,6 +37,7 @@ import { FormPopUpComponent } from './popUp/form-pop-up/form-pop-up.component';
 import { SelectPipe } from './boxFilter/select.pipe';
 import { Error404Component } from './error404/error404/error404.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 const materialModules = [
@@ -54,7 +55,8 @@ const materialModules = [
   MatIconModule,
   MatDividerModule,
   MatDialogModule,
-  NgxPaginationModule
+  NgxPaginationModule,
+  MatTooltipModule
 ]
 
 

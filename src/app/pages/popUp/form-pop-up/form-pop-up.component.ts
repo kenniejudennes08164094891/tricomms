@@ -91,6 +91,7 @@ export class FormPopUpComponent implements OnInit {
   // submit(){
   //   this.user = this.newUserForm.getRawValue();
   //   this.service.setUsersArray(this.user).subscribe((elem:any)=>{
+  //     elem;
   //     console.log("Arrays>>", this.newUserForm.value, elem);
   //     this.dialogRef.close();
   //   })

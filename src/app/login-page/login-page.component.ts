@@ -23,31 +23,31 @@ export class LoginPageComponent implements OnInit {
     password: ['', Validators.required]
   })
 
-  // submit($event: any): void{
-  //   if(this.loginForm.valid){
-  //     this.auth.login(this.loginForm.value).subscribe((result) =>{
-  //       this.router.navigate(['/pages/chats'], {relativeTo: this.route}), result;
-  //       localStorage.setItem('userMail', this.loginForm.value.userMail);
-  //       console.log("Successful Login Attempt>>", $event);
-  //     },
-  //     (err: Error) =>{
-  //       alert(err.message);
-  //     }
-  //     )
-  //     let inputUserMail = <HTMLInputElement>document.getElementById('inputEmail3');
-  //     let inputPassword = <HTMLInputElement>document.getElementById('inputPassword3');
+  submit($event: any): void{
+    if(this.loginForm.valid){
+      this.auth.login(this.loginForm.value).subscribe((result) =>{
+        this.router.navigate(['/pages/chats'], {relativeTo: this.route}), result;
+        localStorage.setItem('userMail', this.loginForm.value.userMail);
+        console.log("Successful Login Attempt>>", $event);
+      },
+      (err: Error) =>{
+        alert(err.message);
+      }
+      )
+      let inputUserMail = <HTMLInputElement>document.getElementById('inputEmail3');
+      let inputPassword = <HTMLInputElement>document.getElementById('inputPassword3');
 
-  //     inputUserMail.value = '';
-  //     inputPassword.value = '';
-  //   }
-  // }
-
-  submit($event:any){
-    this.http.get('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json').subscribe((users:any)=>{
-      console.log("users>>", users, $event);
-      localStorage.setItem('userMail', this.loginForm.value.userMail)
-    })
+      inputUserMail.value = '';
+      inputPassword.value = '';
+    }
   }
+
+  // submit($event:any){
+  //   this.http.get('https://tricomms-2fe5d-default-rtdb.firebaseio.com/users.json').subscribe((users:any)=>{
+  //     console.log("users>>", users, $event);
+  //     localStorage.setItem('userMail', this.loginForm.value.userMail)
+  //   })
+  // }
 
 
 

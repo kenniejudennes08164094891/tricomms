@@ -24,7 +24,7 @@ export class ChatComponent implements OnInit {
     Pusher.logToConsole = true;
 
     const pusher = new Pusher('ajeri_jehovah', {
-      cluster: 'eu'
+      cluster: 'orimolade'
     })
 
     const channel = pusher.subscribe('chat');

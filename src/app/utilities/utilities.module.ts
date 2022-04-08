@@ -15,6 +15,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import { PasswordResetComponent } from './forgotPasswords/password-reset/password-reset.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -23,7 +24,8 @@ const materialModules = [
   MatSidenavModule,
   MatButtonModule,
   MatIconModule,
-  MatDividerModule
+  MatDividerModule,
+  MatTooltipModule
 ]
 
 const cdkLayout = [
